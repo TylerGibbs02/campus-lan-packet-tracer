@@ -1,10 +1,8 @@
 # 🏫 Campus LAN Configuration (Cisco Packet Tracer)
 
 ## 📖 Overview
-This project simulates a small **campus network** using Cisco Packet Tracer.  
-It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services, and basic redundancy** in a hierarchical network design (Core–Distribution–Access).
-
-**Goal:** Build a functional and scalable LAN infrastructure suitable for a mid-sized educational campus.
+This project simulates a **campus network** using Cisco Packet Tracer.  
+It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services, DNS, NTP, SNMP, NAT, redundancy, ACLs, IPv4, IPv6, wireless, and more** in a hierarchical network design (Core–Distribution–Access).
 
 ---
 
@@ -12,15 +10,25 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 - **Core Layer:** High-speed routing and inter-VLAN connectivity  
 - **Distribution Layer:** VLAN trunk aggregation and redundancy  
 - **Access Layer:** End-user connectivity and access security  
-- **Services:** DHCP, static routing, and management VLAN
 
 **Key Technologies:**
 - VLANs and Trunks  
-- Inter-VLAN Routing (Router-on-a-Stick)  
-- DHCP Server Configuration  
-- Spanning Tree Protocol (optional)  
-- Static Routing or OSPF (optional)  
-- Network Testing via `ping` and `traceroute`
+- Inter-VLAN Routing (Router-on-a-Stick)
+- Etherchannel layer 2 and layer 3
+- Rapid Spanning Tree Protocol
+- Static Routing and OSPF 
+- HSRP
+- DHCP
+- DNS
+- NTP
+- SNMP
+- Syslog
+- FTP
+- SSH
+- NAT
+- ACLs and layer 2 security
+- IPv4 and IPv6 routing
+- Wireless
 
 ---
 
