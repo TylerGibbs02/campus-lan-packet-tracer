@@ -2,7 +2,7 @@
 
 ## Overview
 This project simulates a **campus network** using Cisco Packet Tracer.  
-It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services, DNS, NTP, SNMP, NAT, redundancy, ACLs, IPv4, IPv6, wireless, and more** in a hierarchical network design (Core–Distribution–Access).
+It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services, DNS, NAT, redundancy, ACLs, IPv4, IPv6, and more** in a hierarchical network design (Core–Distribution–Access).
 
 ---
 
@@ -21,7 +21,7 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 **Key Technologies:**
 - VLANs and Trunks  
 - Inter-VLAN Routing
-- Etherchannel layer 2 and layer 3
+- Etherchannel
 - Rapid Spanning Tree Protocol
 - Static Routing and OSPF 
 - HSRP
@@ -30,12 +30,10 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 - NTP
 - SNMP
 - Syslog
-- FTP
 - SSH
 - NAT
 - ACLs and layer 2 security
 - IPv4 and IPv6 routing
-- Wireless
 
 ---
 
