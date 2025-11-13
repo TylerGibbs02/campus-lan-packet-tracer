@@ -20,7 +20,7 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 
 **Key Technologies:**
 - VLANs and Trunks  
-- Inter-VLAN Routing (Router-on-a-Stick)
+- Inter-VLAN Routing
 - Etherchannel layer 2 and layer 3
 - Rapid Spanning Tree Protocol
 - Static Routing and OSPF 
