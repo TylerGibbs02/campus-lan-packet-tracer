@@ -1,5 +1,5 @@
 # Overview
-In this file I will walk through every action I took while configuring the LAN for an in-depth look into how the devices were configured. To see final device configurations, please see the `/configs/` file
+In this file I will walk through every action I took while configuring the LAN for an in-depth look into how the devices were configured from beginning to end. To see final device configurations, please see the `/configs/` file
 
 </br>
 
@@ -29,3 +29,16 @@ In this file I will walk through every action I took while configuring the LAN f
 
 </br>
 
+## IPv4 Addresses, Layer-3 Etherchannel, and HSRP
+- Assigned addresses to R1's external facing ports through dhcp and internal facing ports statically
+- Enabled IP routing on Core and Distribution switches
+- Created a layer 3 etherchannel connection between CSW1 and CSW2 using PaGP and assigned IP addresses
+- Assigned static addresses to CSW1 and CSW2 on the interfaces connecting them to the Distribution switches in Offices A and B as well as to the interfaces connecting to R1
+- Assigned static addresses to the loopback interfaces for R1, Core switches, and Distribution switches
+- Disabled all unused interfaces on Core switches
+- Assigned static addresses on Distribution switch interfaces leading to the Core switches and on the loopback interfaces
+- Statically configured SRV1's (server 1) address, default gateway, and subnet mask
+- Statically configured management addresses for all Access switches on the management VLAN interface
+- Configured HSRP on all Distribution switches to provide redundancy and load-balanced traffic from each subnet between them, VLANs 10 and 99 use DSW-A1/DSW-B1 as the active device in their respective office, VLANs 20 and 30/40 use DSW-A2/DSW-B2 as the active device in their respective office
+- Configured Rapid-PVST+ to align with the load-balancing of VLANs configured in HSRP
+- Configured PortFast and BPDU Guard on all access ports in the Access layer
