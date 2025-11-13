@@ -29,7 +29,7 @@ In this file I will walk through every action I took while configuring the LAN f
 
 </br>
 
-## IPv4 Addresses, Layer-3 Etherchannel, and HSRP
+## IPv4 Addresses, Layer-3 Etherchannel, HSRP, and Rapid-PVST+
 - Assigned addresses to R1's external facing ports through dhcp and internal facing ports statically
 - Enabled IP routing on Core and Distribution switches
 - Created a layer 3 etherchannel connection between CSW1 and CSW2 using PaGP and assigned IP addresses
