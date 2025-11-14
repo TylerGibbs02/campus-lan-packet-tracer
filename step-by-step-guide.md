@@ -42,3 +42,14 @@ In this file I will walk through every action I took while configuring the LAN f
 - Configured HSRP on all Distribution switches to provide redundancy and load-balanced traffic from each subnet between them, VLANs 10 and 99 use DSW-A1/DSW-B1 as the active device in their respective office, VLANs 20 and 30/40 use DSW-A2/DSW-B2 as the active device in their respective office
 - Configured Rapid-PVST+ to align with the load-balancing of VLANs configured in HSRP
 - Configured PortFast and BPDU Guard on all access ports in the Access layer
+
+## Single area OSPF and Static Routes
+- Configured OSPF on R1 and all Core and Distribution switches with a process ID of 1 in area 0
+  - OSPF RID's were configured to match loopback interfaces
+  - Loopbacks and SVIs were configured as passive interfaces
+  - All connections between OSPF enabled devices were configured as point-to-point to prevent DR/BDR elections
+  - R1 configured as the ASBR and was given static default routes to its internet connections
+
+</br>
+
+##
