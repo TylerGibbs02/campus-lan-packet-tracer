@@ -8,7 +8,7 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 
 ## Repository Contents
 - `/configs/` – Device configuration files (core, distribution, access, router, etc.)
-- `Network-Diagram.png` – Network topology and VLAN plan
+- `Network-Diagram.png` – Network topology
 - `Campus_LAN_Packet_Tracer.pka` – Cisco Packet Tracer project file
 
 ---
@@ -38,7 +38,7 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 ---
 
 ## Topology
-![Network Topology](diagrams/topology.png)
+![Network Topology](Network-Diagram.png)
 
 *Designed and implemented using Cisco Packet Tracer.*
 
