@@ -48,7 +48,7 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 
 | Device | Role | VLANs | IP Address | Notes |
 |--------|------|--------|-------------|--------|
-
+R1 k k kk k k
 
 ---
 
