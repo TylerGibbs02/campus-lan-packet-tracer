@@ -10,7 +10,7 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 - `/configs/` – Device configuration files (core, distribution, access, router, etc.)
 - `/IP Addressing and Physical Connections/` – Comprehensive list of IP address assignments and links between interfaces on each device
 - `Network-Diagram.png` – Network topology
-- `Campus_LAN_Packet_Tracer.pka` – Cisco Packet Tracer project file
+- `Campus_LAN_Packet_Tracer.pka` – Cisco Packet Tracer project file, requires downloading Packet Tracer to open for further verification
 - `step-by-step-guide.md` – Comprehensive list of each action taken and configuration made to complete the network configuration
 
 ---
