@@ -43,6 +43,8 @@ In this file I will walk through every action I took while configuring the LAN f
 - Configured Rapid-PVST+ to align with the load-balancing of VLANs configured in HSRP
 - Configured PortFast and BPDU Guard on all access ports in the Access layer
 
+</br>
+
 ## Single area OSPF and Static Routes
 - Configured OSPF on R1 and all Core and Distribution switches with a process ID of 1 in area 0
   - OSPF RID's were configured to match loopback interfaces
@@ -52,4 +54,66 @@ In this file I will walk through every action I took while configuring the LAN f
 
 </br>
 
-##
+## Services - DHCP, DNS, NTP, SNMP, Syslog, FTP, SSH, NAT
+- DHCP
+  - Created dhcp pools A-Mgmt, B-Mgmt, A-PC, B-PC, A-Phone, B-Phone, Wi-Fi.
+  - Assigned appropriate networks and default gateways according to VLANs
+  - Assigned all pools with the same domain name and DNS servers
+  - Assigned option 43 to the A/B-Mgmt pools with the WLC address
+  - Configured Distribution Switches to relay DHCP broadcasts from each VLANs SVI to R1's loopback address
+- DNS
+  - Configured SRV1's DNS service with four records: youtube.com, google.com, jeremysitlab.com, and www.jeremysitlab.com (as CNAME record)
+  - Configured all routers and switches to use domain jeremysitlab.com and SRV1 as the DNS server
+- NTP
+  - Configured R1 as a Stratum 5 NTP server
+  - Configured all Core, Dist, and Access Switches to use R1's loopback as their ntp server
+- SNMP
+  - Configured all Core, Dist, and Access Switches with Read-only community string SNMPSTRING
+- Syslog
+  - Configured logging of messages of all severity levels to SRV1 from all Routers and Switches
+  - Enabled logging to the buffer up to 8192 bytes
+- FTP
+  - Configured FTP Username Cisco and Password Cisco on R1
+  - Used FTP on R1 to download a new IOS version from SRV1
+  - Rebooted with new version and removed old version from flash:
+- SSH All routers and switches
+  - Generated 4096 bit RSA keys
+  - Allow only SSHv2
+  - Created standard ACL 1 to permit connections only from Office A PCs and applied to all VTY lines
+  - Restricted VTY access to only SSH input
+  - Configured to require local login on VTY
+  - Configured synchronous logging on VTY
+- NAT
+  - Configured static NAT on R1 to enable internet hosts to access SRV1 via IP Add 203.0.113.113
+  - Configured ACL 2 to permit access from the PC and Phone Subnets in office A and B as well as the Wi-Fi subnet
+  - Created POOL1 to provide 203.0.113.200 - 203.0.113.207 as public addresses to be NAT'd
+  - Tied ACL 2 to POOL1 and enabled PAT overload
+
+</br>
+
+## Security: ACLs and Layer-2 Security
+- Configured extended ACL on CSW2 leading into Office B
+  - Allow ICMP from Office A PCs to Office B PCs
+  - Blocked all other traffic from Office A to Office B
+  - Allowed all other traffic
+- Configured Port Security on each Access Switch's F0/1 port
+  - Allowed the minimum MAC addresses necessary
+  - Configured in Restrict mode
+  - Configured sticky MAC-addresses
+- Configured DHCP Snooping on all Access switches
+  - Enabled on all active VLANs in the LAN
+  - Trusted ports connecting to other switches and to SRV1
+  - Disabled insertion of option 82
+  - Set rate limit of 15 pps on untrusted ports
+  - Set a higher limit of 100 pps on ASW-A1s connection to the WLC
+- Configured Dynamic ARP Inspection on all Access switches
+  - Enabled on all active VLANs in the LAN
+  - Enabled all optional inspections (IP, src-mac, dst-mac)
+  - Trusted connections between switches
+
+</br>
+
+## IPv6
+- Enabled IPv6 Routing and configured addresses on R1, CSW1, and CSW2
+- Configured default static routes on R1 leading to the internet
+- Enabled IPv6 on Port Channel 1 on CSW1 and CSW2 without adding an address
