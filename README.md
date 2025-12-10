@@ -44,14 +44,6 @@ It demonstrates **VLAN segmentation, inter-VLAN routing, trunking, DHCP services
 
 ---
 
-## Device Summary
-
-| Device | Role | VLANs | IP Address | Notes |
-|--------|------|--------|-------------|--------|
-R1 k k kk k k | lkjkl | ljkl
-
----
-
 ## Acknowledgments
 The base topology for this project was originally created by **Jeremy’s IT Lab** as part of his CCNA Packet Tracer lab series.  
-All configurations, documentation, and analysis in this repository were created independently by **Tyler Gibbs** for portfolio demonstration purposes.
+All configurations in this repository were created independently by **Tyler Gibbs** for portfolio demonstration purposes.
